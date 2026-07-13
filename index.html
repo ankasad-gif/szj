@@ -11,7 +11,9 @@
 <meta property="og:locale" content="pl_PL">
 <meta property="og:title" content="Spokój z Jedzeniem — grupa online | Dietanka">
 <meta property="og:description" content="Dla kobiet, które wiedzą, co jeść — ale nie potrafią tego robić. 6 spotkań na żywo online, start 18 sierpnia.">
-<meta property="og:image" content="[OG_IMAGE]">
+<meta property="og:image" content="https://ankasad-gif.github.io/szj/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- [PIXEL] Meta Pixel — odkomentuj i uzupełu ID przed publikacją, jeśli potrzebny
 <script>
@@ -415,6 +417,10 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
       </details>
 
     </div>
+
+    <div style="margin-top:36px">
+      <a class="btn btn--block" id="mid-btn" href="https://cart.easy.tools/checkout/45331335/spokoj-z-jedzeniem-edycja-online-start-1808">Rezerwuję miejsce — start 18.08</a>
+    </div>
   </div>
 </section>
 
@@ -455,12 +461,12 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
 </section>
 
 <!-- 8. OPINIE (ukryte do czasu wstawienia treści) -->
-<section class="section section--paper is-hidden" id="opinie">
+<section class="section section--paper" id="opinie">
   <div class="wrap">
     <p class="kicker">Opinie z edycji stacjonarnych</p>
-    <div class="card"><p>[OPINIA_1]</p></div>
-    <div class="card"><p>[OPINIA_2]</p></div>
-    <div class="card"><p>[OPINIA_3]</p></div>
+    <div class="card"><p>„Ania nie robiła nam rewolucji żywieniowej — ona krok po kroku pokazywała nam, co nas wspiera, a co wprost przeciwnie; uczyła nas dawać sobie przestrzeń do błędów, być dla siebie łagodnymi, definiowała małe, ale konkretne cele. To ona jako pierwsza w mojej długiej przygodzie z dietami zapytała mnie, jak ja właściwie lubię i chcę jeść. (…) Okazuje się, że mając to w głowie, jem zdrowiej niż kiedykolwiek."</p><p><em>— Ania, uczestniczka edycji stacjonarnej</em></p></div>
+    <div class="card"><p>„Wczoraj zjadłam słodkie, ALE po raz pierwszy od kilku tygodni tylko pół gałki loda, a nie 3 jak kiedyś — i dziś nadal kontynuuję zdrowe odżywianie bez wyrzutów sumienia. To sukces po spotkaniach naszej grupy! Kiedyś ta sytuacja byłaby dla mnie porażką i spowodowałaby ponowne obżeranie się słodyczami."</p><p><em>— uczestniczka edycji stacjonarnej</em></p></div>
+    <div class="card"><p>„Dieta już nie jest taka straszna dla mnie, bardziej weszła już w styl życia. Staram się podejmować dobre decyzje podczas zakupów i komponowania posiłków. Dużo mi dały te spotkania."</p><p><em>— Basia, uczestniczka pierwszej edycji</em></p></div>
   </div>
 </section>
 
@@ -522,7 +528,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
 <section class="section section--dark" id="zapis">
   <div class="wrap">
     <p class="kicker">Inwestycja</p>
-    <p>W cenie: 6 spotkań live, nagrania bez limitu, 6 PDF-narzędzi, grupa z check-inami i 30 minut indywidualnie. Liczba miejsc ograniczona celowo — mała, bliska grupa. Zostało <span id="miejsca">[X]</span> miejsc.</p>
+    <p>W cenie: 6 spotkań live, nagrania bez limitu, 6 PDF-narzędzi, grupa z check-inami i 30 minut indywidualnie. Liczba miejsc limitowana — celowo, żeby to była mała, bliska grupa, w której nikt nie znika w tłumie.</p>
 
     <!-- komunikat o zamknięciu zapisów (faza po 18.08) -->
     <p class="closed-msg is-hidden" id="closed-msg">Zapisy zamknięte — pierwsza sesja już trwa.</p>
@@ -530,9 +536,9 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
     <!-- blok ceny (faza sprzedaży) -->
     <div id="sale-block">
       <div class="price-box">
-        <span class="price-old" id="price-old">800 zł</span>
+        <span class="price-old is-hidden" id="price-old"></span>
         <span class="price-now" id="price-now">650 zł</span>
-        <p class="price-note" id="price-note">cena dla zapisanych do 24.07</p>
+        <p class="price-note" id="price-note">cena early bird do 24.07 · od 25.07: 800 zł</p>
         <p class="eb-counter is-hidden" id="eb-counter"></p>
       </div>
       <p>Startujemy 18 sierpnia, wtorki 19:00. Cena 650 zł do 24 lipca, potem 800 zł. Miejsc jest tyle, żeby nikt nie zginął w tłumie — jak znikną, zapisy się zamykają. Jeśli doczytałaś dotąd i coś w Tobie mówi „to o mnie” — to jest ten moment.</p>
@@ -568,11 +574,12 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
   /* ============================================================
      KONFIGURACJA — podmień tutaj przed publikacją
      ============================================================ */
-  var SEATS        = "20";               // liczba wolnych miejsc (limit z EasyCart)
+  var SEATS        = "";                 // nieużywane — liczba miejsc zdjęta ze strony (limit pilnuje EasyCart)
   var LINK_EASYCART = "https://cart.easy.tools/checkout/45331335/spokoj-z-jedzeniem-edycja-online-start-1808"; // link do koszyka (faza sprzedaży)
   var LINK_LISTA   = "https://spokoj.subscribepage.io";     // lista zainteresowanych 2. edycją (po zamknięciu)
 
   /* Granice faz w czasie Europe/Warsaw (lato = CEST, UTC+2) */
+  var LIST_END     = Date.UTC(2026, 6, 15, 21, 59, 59); // 15.07.2026 23:59:59 CEST — cena 550 zł dla listy
   var EB_END       = Date.UTC(2026, 6, 24, 21, 59, 59); // 24.07.2026 23:59:59 CEST
   var CLOSED_START = Date.UTC(2026, 7, 17, 22, 0, 0);   // 18.08.2026 00:00 CEST
   var DAY_MS = 86400000;
@@ -598,13 +605,30 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
   var priceNote    = document.getElementById("price-note");
   var ebCounter    = document.getElementById("eb-counter");
   var finalCta     = document.querySelector(".final-cta");
+  var midBtn       = document.getElementById("mid-btn");
 
-  if (now <= EB_END) {
-    /* ---------- FAZA: EARLY BIRD (650 zł do 24.07) ---------- */
-    priceOld.textContent  = "800 zł";
+  if (now <= LIST_END) {
+    /* ---------- FAZA: CENA DLA LISTY (550 zł do 15.07 23:59) ---------- */
+    hide(priceOld);
+    priceNow.textContent  = "550 zł";
+    priceNote.textContent = "cena dla zapisanych na listę · do 15.07 · od 16.07: 650 zł · od 25.07: 800 zł";
+    hide(ebCounter);
+
+    if (heroBtn){
+      heroBtn.innerHTML = 'Zapisuję się — <span class="hero-btn-price">550 zł</span> do 15.07';
+      heroBtn.href = LINK_EASYCART;
+    }
+    if (heroPriceHint) heroPriceHint.textContent = "Cena dla zapisanych na listę — do 15.07. Od 16.07: 650 zł, od 25.07: 800 zł.";
+    if (stickyBtn){ stickyBtn.textContent = "Zapisuję się — 550 zł"; stickyBtn.href = LINK_EASYCART; }
+    if (finalBtn){ finalBtn.textContent = "Kup teraz"; finalBtn.href = LINK_EASYCART; }
+
+  } else if (now <= EB_END) {
+    /* ---------- FAZA: EARLY BIRD (650 zł do 24.07) ----------
+       Bez przekreślania 800 zł: to cena przyszła, nie obniżka —
+       przekreślenie ceny nigdy niestosowanej może wprowadzać w błąd. */
+    hide(priceOld);
     priceNow.textContent  = "650 zł";
-    priceNote.textContent = "cena dla zapisanych do 24.07";
-    show(priceOld);
+    priceNote.textContent = "cena early bird do 24.07 · od 25.07: 800 zł";
 
     var daysLeft = Math.ceil((EB_END - now) / DAY_MS);
     if (daysLeft < 1) daysLeft = 1;
@@ -616,7 +640,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
       heroBtn.innerHTML = 'Zapisuję się — <span class="hero-btn-price">650 zł</span> do 24.07';
       heroBtn.href = LINK_EASYCART;
     }
-    if (heroPriceHint) heroPriceHint.textContent = "Cena early bird — obowiązuje do 24 lipca.";
+    if (heroPriceHint) heroPriceHint.textContent = "Cena early bird — do 24 lipca. Od 25 lipca: 800 zł.";
     if (stickyBtn){ stickyBtn.textContent = "Zapisuję się — 650 zł"; stickyBtn.href = LINK_EASYCART; }
     if (finalBtn){ finalBtn.textContent = "Kup teraz"; finalBtn.href = LINK_EASYCART; }
 
@@ -647,6 +671,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
     }
     if (heroPriceHint) heroPriceHint.textContent = "Zapisy do 1. edycji są zamknięte — pierwsza sesja już trwa.";
     if (stickyBtn){ stickyBtn.textContent = "Lista 2. edycji"; stickyBtn.href = LINK_LISTA; }
+    if (midBtn){ midBtn.textContent = "Zapisz się na listę 2. edycji"; midBtn.href = LINK_LISTA; }
     if (finalBtn){ finalBtn.textContent = "Zapisz się na listę 2. edycji"; finalBtn.href = LINK_LISTA; }
     var seatsNote = finalCta ? finalCta.querySelector(".seats-note") : null;
     if (seatsNote) seatsNote.textContent = "Dołącz do listy — dostaniesz info o kolejnej edycji jako pierwsza.";
