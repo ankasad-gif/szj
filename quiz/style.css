@@ -48,6 +48,8 @@ html, body {
   min-height: 100dvh;
 }
 
+.screen[hidden] { display: none; } /* atrybut hidden musi wygrywać z display:flex */
+
 .screen--dark { background: var(--dark); }
 .screen--light { background: var(--paper); }
 
