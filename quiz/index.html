@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaki jest Twój wzorzec z jedzeniem? · quiz 2 min</title>
+  <meta name="description" content="5 pytań, 2 minuty. Nie „co robisz źle”, tylko jaki mechanizm Tobą kieruje — i co na niego działa. Bez oceniania, bez liczenia, bez diet.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jaki jest Twój wzorzec z jedzeniem? · quiz 2 min">
+  <meta property="og:description" content="5 pytań, 2 minuty. Nie „co robisz źle”, tylko jaki mechanizm Tobą kieruje — i co na niego działa. Bez oceniania, bez liczenia, bez diet.">
+  <!-- og:image wymaga PEŁNEGO adresu (z https://) — po włączeniu GitHub Pages
+       podmień poniższy adres na swój, np. https://twojanazwa.github.io/quiz/assets/og.png.
+       Sam obrazek (1200×630) — do dostarczenia przez Design, plik: assets/og.png -->
+  <meta property="og:image" content="https://ankasad-gif.github.io/szj/quiz/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<main id="app">
+
+  <!-- ============ E0 · START ============ -->
+  <section id="screen-start" class="screen screen--dark">
+    <div class="start__body">
+      <div class="kicker">
+        <div class="kicker__line"></div>
+        <div class="kicker__text">Quiz · 5 pytań · 2 minuty</div>
+      </div>
+      <h1 class="start__title">Jaki jest Twój wzorzec z&nbsp;jedzeniem?</h1>
+      <p class="start__lead">Nie „co robisz źle”, tylko jaki mechanizm Tobą kieruje — i&nbsp;co na niego działa. Bez oceniania, bez liczenia, bez diet.</p>
+      <div class="start__cta">
+        <button id="btn-start" class="btn btn--primary" type="button">Zaczynam</button>
+      </div>
+    </div>
+    <div class="screen__footer screen__footer--dark">
+      <span>Twoja dietetyczka Dietanka</span>
+    </div>
+  </section>
+
+  <!-- ============ E1–E5 · PYTANIA ============ -->
+  <section id="screen-quiz" class="screen screen--light" hidden>
+    <div class="quiz__header">
+      <div class="quiz__meta">
+        <span class="quiz__label">Pytanie</span>
+        <span class="quiz__counter"><span id="q-current">1</span> / <span id="q-total">5</span></span>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Postęp quizu" aria-valuemin="0" aria-valuemax="5">
+        <div id="progress-fill" class="progress__fill"></div>
+      </div>
+    </div>
+    <div class="quiz__body">
+      <h2 id="q-text" class="quiz__question"></h2>
+      <div id="q-answers" class="quiz__answers"></div>
+    </div>
+    <div class="screen__footer screen__footer--light">
+      <span>Twoja dietetyczka Dietanka</span>
+    </div>
+  </section>
+
+  <!-- ============ E6 · WYNIK + FORMULARZ ============ -->
+  <section id="screen-result" class="screen screen--dark" hidden>
+    <div class="result__header">
+      <div class="kicker">
+        <div class="kicker__line"></div>
+        <div class="kicker__text">Twój wzorzec</div>
+      </div>
+      <h2 id="result-title" class="result__title"></h2>
+    </div>
+    <div class="result__card">
+      <div id="result-text" class="result__text"></div>
+
+      <form id="lead-form" class="lead" novalidate>
+        <h3 class="lead__title">Chcesz dostać wskazówkę dopasowaną do Twojego wzorca?</h3>
+        <input id="f-imie" class="input" type="text" name="imie" placeholder="Imię (opcjonalne)" maxlength="100" autocomplete="given-name">
+        <input id="f-email" class="input" type="email" name="email" placeholder="Twój e-mail" maxlength="254" autocomplete="email" required>
+        <!-- honeypot — pole niewidoczne dla ludzi, boty je wypełniają -->
+        <div class="hp" aria-hidden="true">
+          <label>Strona www<input id="f-website" type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <label class="lead__consent">
+          <input id="f-zgoda" type="checkbox" name="zgoda">
+          <span>Chcę dostawać maile od Dietanki i&nbsp;wiem, że mogę się wypisać jednym kliknięciem. Szczegóły w&nbsp;<a id="link-polityka" href="#" target="_blank" rel="noopener">polityce prywatności</a>.</span>
+        </label>
+        <button id="btn-submit" class="btn btn--primary" type="submit">
+          <span class="btn__label">Wyślij mi wskazówkę</span>
+          <span class="btn__spinner" hidden></span>
+        </button>
+        <p id="form-error" class="lead__error" role="alert" hidden></p>
+        <p class="lead__footnote">Startujemy 18.08 — jeśli Twój wzorzec rezonuje, zobacz program <a id="link-program" class="lead__program" href="#">Spokój z&nbsp;Jedzeniem&nbsp;→</a></p>
+      </form>
+
+      <div class="result__footer">
+        <span>Twoja dietetyczka Dietanka</span>
+        <a id="btn-restart" class="result__restart" href="#">Rozwiąż quiz jeszcze raz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ E7 · PODZIĘKOWANIE ============ -->
+  <section id="screen-thanks" class="screen screen--dark" hidden>
+    <div class="start__body">
+      <div class="kicker">
+        <div class="kicker__line"></div>
+        <div class="kicker__text">Gotowe</div>
+      </div>
+      <h2 class="start__title">Wskazówka jest w&nbsp;drodze</h2>
+      <p class="start__lead">Sprawdź skrzynkę za kilka minut — jeśli nic nie przyjdzie, zajrzyj do folderu „Oferty” albo „Spam” i&nbsp;przeciągnij mail do głównej skrzynki.</p>
+      <p class="start__lead">A jeśli Twój wzorzec rezonuje — startujemy 18.08:</p>
+      <div class="start__cta">
+        <a id="link-program-thanks" class="btn btn--primary btn--link" href="#">Zobacz program Spokój z&nbsp;Jedzeniem</a>
+      </div>
+    </div>
+    <div class="screen__footer screen__footer--dark">
+      <span>Twoja dietetyczka Dietanka</span>
+    </div>
+  </section>
+
+</main>
+<noscript>
+  <p style="padding:24px; text-align:center; font-family:system-ui,sans-serif; color:#F0F2EB;">Ten quiz potrzebuje włączonego JavaScriptu. Włącz JavaScript albo otwórz stronę w innej przeglądarce.</p>
+</noscript>
+</body>
+</html>
