@@ -9,7 +9,7 @@ const CONFIG = {
   // Strona sprzedażowa programu Spokój z Jedzeniem:
   LINK_PROGRAM: "https://ankasad-gif.github.io/szj/",
   // Polityka prywatności (tymczasowa z repo; po publikacji Easy Legal podmień):
-  LINK_POLITYKA: "https://ankasad-gif.github.io/szj/polityka.html",
+  LINK_POLITYKA: "https://app.easy.tools/policies/45331335",
   // true = komunikaty diagnostyczne w konsoli przeglądarki
   DEBUG: false
 };
