@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spokój z Jedzeniem — grupa online | Dietanka</title>
+<meta name="description" content="Dla kobiet, które wiedzą, co jeść — ale nie potrafią tego robić. Albo nie wiedzą dlaczego. Albo mają już dość myślenia o jedzeniu w ogóle. 6 spotkań na żywo online.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Spokój z Jedzeniem — grupa online | Dietanka">
+<meta property="og:description" content="Dla kobiet, które wiedzą, co jeść — ale nie potrafią tego robić. 6 spotkań na żywo online, start 18 sierpnia.">
+<meta property="og:image" content="https://ankasad-gif.github.io/szj/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- [PIXEL] Meta Pixel — odkomentuj i uzupełu ID przed publikacją, jeśli potrzebny
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '[PIXEL]'); fbq('track', 'PageView');
+</script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green-dark:#283027;
+  --paper:#F0F2EB;
+  --sage:#5E7A5C;
+  --sage-light:#AAB6A8;
+  --ink:#333732;
+
+  --maxw:680px;
+  --radius:10px;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;color:var(--green-dark);margin:0 0 .5em}
+h1{font-size:2.15rem;letter-spacing:-.01em}
+h2{font-size:1.6rem;margin-bottom:.7em}
+h3{font-size:1.2rem}
+p{margin:0 0 1.1em}
+strong{font-weight:600}
+a{color:var(--sage)}
+
+/* ---- layout ---- */
+.section{padding:56px 20px}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.section--paper{background:var(--paper);color:var(--ink)}
+.section--dark{background:var(--green-dark);color:var(--paper)}
+.section--sage{background:var(--sage);color:var(--paper)}
+.section--dark h1,.section--dark h2,.section--dark h3,
+.section--sage h1,.section--sage h2,.section--sage h3{color:var(--paper)}
+
+/* ---- kicker ---- */
+.kicker{
+  display:flex;align-items:center;gap:12px;
+  font-size:.75rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sage);
+  margin:0 0 18px;
+}
+.section--dark .kicker,.section--sage .kicker{color:var(--sage-light)}
+.kicker::after{content:"";flex:0 0 34px;height:1px;background:currentColor;opacity:.7}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-block;
+  background:var(--sage);
+  color:#fff;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:1.02rem;
+  line-height:1.3;
+  text-decoration:none;
+  text-align:center;
+  padding:16px 26px;
+  border:0;
+  border-radius:var(--radius);
+  cursor:pointer;
+  transition:background .18s ease,transform .18s ease;
+}
+.btn:hover{background:#4c6549}
+.btn:active{transform:translateY(1px)}
+.btn--block{display:block;width:100%}
+.section--sage .btn{background:var(--green-dark)}
+.section--sage .btn:hover{background:#1e241d}
+
+/* ---- focus states ---- */
+a:focus-visible,.btn:focus-visible,summary:focus-visible,details:focus-visible{
+  outline:3px solid var(--sage);
+  outline-offset:3px;
+  border-radius:6px;
+}
+.section--dark a:focus-visible,.section--dark .btn:focus-visible,
+.section--dark summary:focus-visible,.section--sage .btn:focus-visible{
+  outline-color:var(--sage-light);
+}
+
+/* ---- hero ---- */
+.hero{padding-top:72px;padding-bottom:64px}
+.hero .lead{font-size:1.2rem;line-height:1.55;margin-bottom:1.3em}
+.hero .meta{
+  font-size:.95rem;color:var(--sage-light);
+  padding:14px 0;margin:0 0 1.3em;
+  border-top:1px solid rgba(170,182,168,.35);
+  border-bottom:1px solid rgba(170,182,168,.35);
+}
+.hero .context{opacity:.92}
+.hero-cta{margin-top:26px}
+.hero-price-hint{font-size:.85rem;color:var(--sage-light);margin:12px 0 0}
+
+/* ---- checklist ---- */
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{
+  position:relative;
+  padding:14px 0 14px 34px;
+  border-bottom:1px solid rgba(94,122,92,.2);
+}
+.checklist li:last-child{border-bottom:0}
+.checklist li::before{
+  content:"✓";
+  position:absolute;left:0;top:14px;
+  color:var(--sage);font-weight:700;
+}
+.closer{margin-top:26px;font-style:italic;color:var(--green-dark)}
+
+/* ---- cards ---- */
+.card{
+  background:rgba(255,255,255,.55);
+  border:1px solid var(--sage-light);
+  border-radius:var(--radius);
+  padding:22px 20px;
+  margin:16px 0 0;
+}
+.section--dark .card{
+  background:rgba(240,242,235,.06);
+  border-color:rgba(170,182,168,.35);
+}
+.card p:last-child{margin-bottom:0}
+
+/* ---- program accordion ---- */
+.program{margin-top:8px}
+.program details{
+  border:1px solid rgba(170,182,168,.35);
+  border-radius:var(--radius);
+  margin:0 0 12px;
+  overflow:hidden;
+}
+.program summary{
+  list-style:none;cursor:pointer;
+  padding:18px 20px;
+  display:flex;gap:14px;align-items:baseline;
+  font-family:var(--serif);font-size:1.1rem;font-weight:600;
+  color:var(--paper);
+}
+.program summary::-webkit-details-marker{display:none}
+.program summary .num{
+  flex:0 0 auto;color:var(--sage-light);font-size:.95rem;
+  font-family:var(--sans);font-weight:600;
+}
+.program summary .date{
+  display:block;font-family:var(--sans);font-size:.8rem;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--sage-light);margin-top:4px;
+}
+.program summary .plus{margin-left:auto;flex:0 0 auto;transition:transform .2s ease;font-family:var(--sans)}
+.program details[open] summary .plus{transform:rotate(45deg)}
+.program .body{padding:0 20px 20px}
+.program .body p{margin:0 0 1em}
+.program .outcome{
+  margin-top:6px;padding-top:14px;
+  border-top:1px solid rgba(170,182,168,.35);
+  font-size:.98rem;
+}
+.program .outcome strong{color:var(--sage-light)}
+
+/* ---- benefits (Co -> Po co) ---- */
+.benefits{list-style:none;margin:0;padding:0}
+.benefits li{
+  padding:18px 0;
+  border-bottom:1px solid rgba(94,122,92,.2);
+}
+.benefits li:last-child{border-bottom:0}
+.benefits .what{
+  display:block;font-family:var(--serif);font-weight:600;
+  font-size:1.1rem;color:var(--green-dark);margin-bottom:4px;
+}
+.benefits .why{display:block;color:var(--ink)}
+
+/* ---- host photo ---- */
+.host{display:flex;flex-direction:column;gap:22px}
+.host-photo{
+  width:150px;height:150px;flex:0 0 auto;
+  border-radius:50%;
+  background:rgba(170,182,168,.18);
+  border:1px solid rgba(170,182,168,.4);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--sage-light);font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;text-align:center;
+}
+
+/* ---- FAQ ---- */
+.faq details{
+  border-bottom:1px solid rgba(94,122,92,.25);
+  padding:6px 0;
+}
+.faq summary{
+  list-style:none;cursor:pointer;
+  padding:14px 34px 14px 0;position:relative;
+  font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--green-dark);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:2px;top:12px;
+  font-family:var(--sans);font-size:1.4rem;color:var(--sage);transition:transform .2s ease;
+}
+.faq details[open] summary::after{content:"–"}
+.faq .body{padding:0 0 16px}
+.faq .body p{margin:0}
+
+/* ---- not-for box ---- */
+.notfor{
+  border:2px solid var(--sage-light);
+  border-radius:var(--radius);
+  padding:24px 22px;
+  background:rgba(255,255,255,.4);
+}
+.notfor ul{list-style:none;margin:0;padding:0}
+.notfor li{padding:12px 0;border-bottom:1px dashed rgba(94,122,92,.3)}
+.notfor li:last-child{border-bottom:0}
+
+/* ---- price block ---- */
+.price-box{text-align:center;margin:8px 0 4px}
+.price-old{
+  font-size:1.15rem;color:var(--sage-light);
+  text-decoration:line-through;margin-right:10px;
+}
+.price-now{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--paper)}
+.price-note{font-size:.9rem;color:var(--sage-light);margin-top:6px}
+.eb-counter{
+  display:inline-block;margin:14px 0 0;
+  font-size:.85rem;letter-spacing:.04em;color:var(--sage-light);
+}
+.closed-msg{
+  font-family:var(--serif);font-size:1.15rem;color:var(--paper);
+  text-align:center;margin:0 0 18px;
+}
+.final-cta{margin-top:22px}
+.seats-note{font-size:.9rem;color:var(--sage-light);text-align:center;margin-top:14px}
+
+/* ---- footer ---- */
+.footer{padding:44px 20px;background:var(--green-dark);color:var(--sage-light);text-align:center;font-size:.9rem}
+.footer a{color:var(--paper)}
+.footer .brand{font-family:var(--serif);color:var(--paper);font-size:1.05rem;margin-bottom:10px}
+
+/* ---- hidden until content ---- */
+.is-hidden{display:none}
+
+/* ---- sticky mobile CTA ---- */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(40,48,39,.96);
+  backdrop-filter:blur(6px);
+  border-top:1px solid rgba(170,182,168,.3);
+  transform:translateY(120%);
+  transition:transform .25s ease;
+}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta .btn{margin:0}
+
+/* ---- desktop ---- */
+@media (min-width:768px){
+  body{font-size:18px}
+  .section{padding:76px 24px}
+  h1{font-size:2.9rem}
+  h2{font-size:2rem}
+  .hero{padding-top:96px;padding-bottom:88px}
+  .hero .lead{font-size:1.35rem}
+  .host{flex-direction:row;align-items:flex-start}
+  .sticky-cta{display:none}
+}
+
+/* ---- reduced motion ---- */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<header class="section section--dark hero" id="top">
+  <div class="wrap">
+    <p class="kicker">Wersja online · Zapisy otwarte</p>
+    <h1>Spokój z Jedzeniem</h1>
+    <p class="lead">Dla kobiet, które wiedzą, co jeść — ale nie potrafią tego robić. Albo nie wiedzą dlaczego. Albo mają już dość myślenia o jedzeniu w ogóle.</p>
+    <p class="meta">6 spotkań na żywo · wtorki 19:00 · start 18 sierpnia · nagrania bez limitu</p>
+    <p class="context">Prowadzę tę grupę stacjonarnie — za nami dwie edycje. Teraz pierwszy raz przenoszę ją online, żebyś mogła być, gdziekolwiek jesteś.</p>
+    <div class="hero-cta">
+      <a class="btn btn--block" id="hero-btn" href="https://cart.easy.tools/checkout/45331335/spokoj-z-jedzeniem-edycja-online-start-1808">Zapisuję się — <span class="hero-btn-price">650 zł</span> do 24.07</a>
+      <p class="hero-price-hint" id="hero-price-hint"></p>
+    </div>
+  </div>
+</header>
+
+<!-- 2. CZY TO O TOBIE -->
+<section class="section section--paper">
+  <div class="wrap">
+    <p class="kicker">Czy to o Tobie?</p>
+    <ul class="checklist">
+      <li>Twoja dieta zaczyna się w poniedziałek i kończy w środę — i to się powtarza od lat.</li>
+      <li>Zapominasz jeść cały dzień, a wieczorem opędzlowałabyś całą lodówkę.</li>
+      <li>Nie wiesz właściwie, dlaczego nie umiesz się ogarnąć z jedzeniem — próbujesz, a ono wraca po staremu.</li>
+      <li>Albo odwrotnie: wiesz dokładnie dlaczego — z terapii, książek, własnych obserwacji — ale nie umiesz się za to zabrać. Wiedza jest, działania brak.</li>
+      <li>Masz dość ciągłego myślenia o jedzeniu. Tego, że jest go w głowie za dużo i że wydaje się ogromną robotą.</li>
+      <li>Czujesz, że kilku rzeczy powinnaś się po prostu douczyć — konkretnie, bez owijania.</li>
+      <li>Diety zostawiły Cię z przekonaniami, które dziś bardziej ranią, niż pomagają: „bez sztywnych zasad nie dam rady”, „jak zacznę, nie skończę”, „ze mną zawsze tak”.</li>
+      <li>Twój mózg (może z ADHD — zdiagnozowanym lub nie) nie chce współpracować z idealnymi planami: nowe podejście ekscytuje przez tydzień, a potem umiera.</li>
+    </ul>
+    <p class="closer">Jeśli przy którymkolwiek punkcie pomyślałaś „to ja” — czytaj dalej. Nie musisz pasować do wszystkich.</p>
+  </div>
+</section>
+
+<!-- 3. DLACZEGO TO ZADZIAŁA -->
+<section class="section section--paper">
+  <div class="wrap">
+    <p class="kicker">Dlaczego to zadziała</p>
+    <h2>Dlaczego to zadziała, skoro diety zawiodły</h2>
+    <p>Bo problem nigdy nie był w jadłospisie. Dieta daje strukturę, kontrolę i ulgę od chaosu — i dlatego kusi — ale nie odpowiada na pytanie, dlaczego jesz, gdy nie jesteś głodna, i czemu „wiesz, ale nie robisz”. Ten program robi dokładnie odwrotnie: najpierw rozumiesz swój mechanizm (bez wstydu — to nigdy nie była Twoja wina), a potem, na tym samym spotkaniu, dostajesz narzędzie, które z tego mechanizmu wynika. Zawsze w tej kolejności. Zero teorii, z której nic nie wynika.</p>
+    <div class="card">
+      <h3>Nic nie startujesz sama</h3>
+      <p>Każde narzędzie uruchamiamy RAZEM, na spotkaniu — alarm ustawiasz w telefonie na sesji, menu regulacji fotografujesz zanim się rozłączymy, listę zakupów masz wpisaną przed końcem spotkania. W domu już tylko kontynuujesz coś, co działa. To jest zaprojektowane dla mózgu, który wie, co robić, ale nie umie zacząć.</p>
+    </div>
+    <div class="card">
+      <h3>Jedna strona na lodówkę</h3>
+      <p>Każde spotkanie zostawia Ci jeden konkretny element Twojego systemu. Po szóstym składamy je w JEDNĄ STRONĘ — Twój własny system, w wersji na lodówkę. Nie wspomnienia ze spotkań. Kartka, która działa, kiedy masz 40% mocy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROGRAM -->
+<section class="section section--dark">
+  <div class="wrap">
+    <p class="kicker">Program — 6 spotkań</p>
+    <div class="program">
+
+      <details open>
+        <summary><span class="num">1</span><span>Dlaczego wiesz, co robić — i wciąż tego nie robisz.<span class="date">18.08</span></span><span class="plus">+</span></summary>
+        <div class="body">
+          <p>Czego naprawdę szukałaś w dietach, czemu każda zawodziła (i że to nie Ty zawiodłaś) i jak przekonania z lat sterują Twoim jedzeniem do dziś.</p>
+          <p class="outcome"><strong>Wychodzisz z:</strong> mapą własnego wzorca + jednym przekonaniem w rozbrajaniu (metoda 6 kroków) + pierwszą wygraną do zrobienia od zaraz.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="num">2</span><span>Twoje ciało wysyłało sygnały.<span class="date">25.08</span></span><span class="plus">+</span></summary>
+        <div class="body">
+          <p>Głód, którego nie słyszysz w dzień i który wraca wieczorem ze zdwojoną siłą. Głód fizyczny vs emocjonalny — bez oceniania.</p>
+          <p class="outcome"><strong>Wychodzisz z:</strong> mapą swoich sygnałów + jedną kotwicą zainstalowaną NA spotkaniu (alarm ustawiamy razem).</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="num">3</span><span>Stres, nuda, przebodźcowanie — i nagle lodówka.<span class="date">01.09</span></span><span class="plus">+</span></summary>
+        <div class="body">
+          <p>Jak przerwać automat bez odbierania sobie jedynego narzędzia, które działa.</p>
+          <p class="outcome"><strong>Wychodzisz z:</strong> własnym menu regulacji (sfotografowanym, na lodówkę) + protokołem 3 kroków na moment „już otwieram szafkę”.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="num">4</span><span>Planowanie dla mózgu, który nie znosi planów.<span class="date">08.09</span></span><span class="plus">+</span></summary>
+        <div class="body">
+          <p>Dlaczego meal prep u Ciebie pada i co zamiast — plan, który działa na 40% mocy.</p>
+          <p class="outcome"><strong>Wychodzisz z:</strong> własnym elastycznym planem + listą komponentów wpisaną do telefonu przed końcem spotkania.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="num">5</span><span>Reset bez kary.<span class="date">15.09</span></span><span class="plus">+</span></summary>
+        <div class="body">
+          <p>Potknięcie to nie porażka — jak wracać w godzinę, nie od poniedziałku. I kiedy naprawdę możesz powiedzieć „zbudowałam nawyk”.</p>
+          <p class="outcome"><strong>Wychodzisz z:</strong> spisanym punktem zero + planem „jeśli–to” na swój najczęstszy scenariusz wywrócenia.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="num">6</span><span>Czego naprawdę potrzebuje Twoje ciało po 30-tce — bez liczenia.<span class="date">22.09</span></span><span class="plus">+</span></summary>
+        <div class="body">
+          <p>Białko, błonnik, omega-3, ruch: zasada „dodaj, nie odejmuj”. Finał: składamy Twój system.</p>
+          <p class="outcome"><strong>Wychodzisz z:</strong> kartą 4 filarów + JEDNĄ STRONĄ „Twój system” (wersja na lodówkę) + planem na kolejne 4–6 tygodni.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div style="margin-top:36px">
+      <a class="btn btn--block" id="mid-btn" href="https://cart.easy.tools/checkout/45331335/spokoj-z-jedzeniem-edycja-online-start-1808">Rezerwuję miejsce — start 18.08</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. JAK WYGLĄDA SPOTKANIE -->
+<section class="section section--paper">
+  <div class="wrap">
+    <p class="kicker">Jak wygląda spotkanie od środka</p>
+    <p>Wtorek 19:00, na żywo online, 60–90 minut. Krótka część „dlaczego” (maks. 25 minut — tyle, ile trzeba, żeby narzędzie miało sens), potem praca na własnym materiale, na końcu uruchamiamy narzędzie razem. Wszystko nagrywane — jeśli nie możesz być na żywo, oglądasz kiedy chcesz, nagrania zostają z Tobą bez limitu.</p>
+    <p>Nic nie musisz: kamera może być wyłączona przez wszystkie 6 spotkań. Mówienie i pisanie na czacie są równoprawne — możesz przejść cały program, nie odzywając się ani razu, i wyjąć z niego wszystko.</p>
+    <p>Zadania między spotkaniami mają zawsze dwie wersje: pełną i wystarczającą (np. 3 notatki głosowe zamiast dziennika). Zadanie nie jest pracą domową — jest materiałem na kolejne spotkanie.</p>
+    <p>W piątki krótki check-in na grupie: „jedna rzecz, która zadziałała / jedno miejsce, gdzie utknęłam”. Jedno zdanie, zero tłumaczenia się.</p>
+  </div>
+</section>
+
+<!-- 6. CO DOSTAJESZ -->
+<section class="section section--paper">
+  <div class="wrap">
+    <p class="kicker">Co dostajesz</p>
+    <ul class="benefits">
+      <li><span class="what">6 spotkań live (wt 19:00)</span><span class="why">Praca na Twoim materiale, nie wykład. Narzędzia uruchamiane wspólnie, na sesji.</span></li>
+      <li><span class="what">Nagrania bezterminowo</span><span class="why">Życie się dzieje. Nie możesz być — nadrabiasz bez straty.</span></li>
+      <li><span class="what">6 PDF-narzędzi</span><span class="why">Karty, mapy, szablony — w tym wersje „na lodówkę”. Plus warstwa „dla dociekliwych”: głębsze mechanizmy dla tych, które chcą rozumieć więcej.</span></li>
+      <li><span class="what">Zamknięta grupa + piątkowe check-iny</span><span class="why">Małe, bliskie grono. Rytm, który podtrzymuje, gdy nowość programu naturalnie opadnie.</span></li>
+      <li><span class="what">30 minut 1:1 po programie</span><span class="why">Twój system, Twoje pytania, Twój osobisty mechanizm startu — sam na sam.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7. O PROWADZĄCEJ -->
+<section class="section section--dark">
+  <div class="wrap host">
+    <div class="host-photo">[FOTO_ANIA]</div>
+    <div>
+      <p class="kicker">O prowadzącej</p>
+      <p>Jestem Ania — dietetyczka kliniczna i psychodietetyczka. Sama mam ADHD, więc wiem, jak wygląda „wiem, co robić” bez robienia. Dlatego w mojej pracy nie ma idealnych planów — jest regulacja zamiast kontroli i tempo, które da się utrzymać. Od dwóch edycji prowadzę Spokój z Jedzeniem stacjonarnie; kobiety wychodzą z niej z własnym systemem, nie z rozpiską.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. OPINIE (ukryte do czasu wstawienia treści) -->
+<section class="section section--paper" id="opinie">
+  <div class="wrap">
+    <p class="kicker">Opinie z edycji stacjonarnych</p>
+    <div class="card"><p>„Ania nie robiła nam rewolucji żywieniowej — ona krok po kroku pokazywała nam, co nas wspiera, a co wprost przeciwnie; uczyła nas dawać sobie przestrzeń do błędów, być dla siebie łagodnymi, definiowała małe, ale konkretne cele. To ona jako pierwsza w mojej długiej przygodzie z dietami zapytała mnie, jak ja właściwie lubię i chcę jeść. (…) Okazuje się, że mając to w głowie, jem zdrowiej niż kiedykolwiek."</p><p><em>— Ania, uczestniczka edycji stacjonarnej</em></p></div>
+    <div class="card"><p>„Wczoraj zjadłam słodkie, ALE po raz pierwszy od kilku tygodni tylko pół gałki loda, a nie 3 jak kiedyś — i dziś nadal kontynuuję zdrowe odżywianie bez wyrzutów sumienia. To sukces po spotkaniach naszej grupy! Kiedyś ta sytuacja byłaby dla mnie porażką i spowodowałaby ponowne obżeranie się słodyczami."</p><p><em>— uczestniczka edycji stacjonarnej</em></p></div>
+    <div class="card"><p>„Dieta już nie jest taka straszna dla mnie, bardziej weszła już w styl życia. Staram się podejmować dobre decyzje podczas zakupów i komponowania posiłków. Dużo mi dały te spotkania."</p><p><em>— Basia, uczestniczka pierwszej edycji</em></p></div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="section section--paper">
+  <div class="wrap">
+    <p class="kicker">Częste pytania i wątpliwości</p>
+    <div class="faq">
+
+      <details>
+        <summary>Nie mam diagnozy ADHD — czy to dla mnie?</summary>
+        <div class="body"><p>Tak. Program jest zbudowany pod mózg, który nie współpracuje ze sztywnymi planami — z diagnozą, z podejrzeniem albo po prostu z takim doświadczeniem. Nie sprawdzam legitymacji.</p></div>
+      </details>
+
+      <details>
+        <summary>Wiem już, dlaczego tak mam. Czy nie będę się nudzić na teorii?</summary>
+        <div class="body"><p>Nie — to program „od rozumienia do robienia”. Część „dlaczego” jest krótka i zawsze kończy się narzędziem; głębsze mechanizmy dostajesz w PDF, jeśli chcesz więcej. A jeśli Twoim problemem jest samo zabranie się do działania — to właśnie dla Ciebie wszystko uruchamiamy razem, na żywo.</p></div>
+      </details>
+
+      <details>
+        <summary>Nie mogę we wtorki o 19:00.</summary>
+        <div class="body"><p>Wszystko jest nagrywane, a zadania i check-iny działają niezależnie od obecności live. Spotkanie 1:1 umawiamy w terminie, który Tobie pasuje.</p></div>
+      </details>
+
+      <details>
+        <summary>Boję się mówić o sobie przy ludziach.</summary>
+        <div class="body"><p>Nie musisz. Kamera wyłączona, czat zamiast mikrofonu, a większość pracy i tak robisz pisemnie u siebie. Grupa daje efekt „nie jestem w tym sama” — nie obowiązek zwierzeń.</p></div>
+      </details>
+
+      <details>
+        <summary>Czy to terapia?</summary>
+        <div class="body"><p>Nie. To program psychoedukacyjny z narzędziami — prowadzony przez dietetyczkę kliniczną i psychodietetyczkę. Jeśli w trakcie okaże się, że potrzebujesz wsparcia terapeutycznego, powiem Ci to wprost i pomogę znaleźć właściwe miejsce.</p></div>
+      </details>
+
+      <details>
+        <summary>Co po programie? Znowu wszystko opadnie?</summary>
+        <div class="body"><p>Wychodzisz z jednostronicowym systemem, planem na 4–6 tygodni i punktem zero na gorsze momenty. Do tego 30 minut 1:1, żeby domknąć to, co Twoje. Program uczy wracania — a wracanie zostaje.</p></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- 10. DLA KOGO TO NIE JEST -->
+<section class="section section--paper">
+  <div class="wrap">
+    <p class="kicker">Dla kogo to NIE jest</p>
+    <div class="notfor">
+      <ul>
+        <li>Jeśli szukasz jadłospisu, rozpiski albo planu „ile czego jeść” — nie znajdziesz ich tu. Ani jednej gramatury.</li>
+        <li>Jeśli oczekujesz obietnicy schudnięcia X kg — tu pracujemy nad spokojem i relacją z jedzeniem, nie nad wagą.</li>
+        <li>Jeśli zmagasz się z zaburzeniem odżywiania wymagającym leczenia — ten program nie zastąpi terapii. Napisz do mnie, pomogę Ci znaleźć odpowiednie wsparcie; wrócisz, kiedy będzie na to przestrzeń.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11. INWESTYCJA + CTA FINALNE -->
+<section class="section section--dark" id="zapis">
+  <div class="wrap">
+    <p class="kicker">Inwestycja</p>
+    <p>W cenie: 6 spotkań live, nagrania bez limitu, 6 PDF-narzędzi, grupa z check-inami i 30 minut indywidualnie. Liczba miejsc limitowana — celowo, żeby to była mała, bliska grupa, w której nikt nie znika w tłumie.</p>
+
+    <!-- komunikat o zamknięciu zapisów (faza po 18.08) -->
+    <p class="closed-msg is-hidden" id="closed-msg">Zapisy zamknięte — pierwsza sesja już trwa.</p>
+
+    <!-- blok ceny (faza sprzedaży) -->
+    <div id="sale-block">
+      <div class="price-box">
+        <span class="price-old is-hidden" id="price-old"></span>
+        <span class="price-now" id="price-now">650 zł</span>
+        <p class="price-note" id="price-note">cena early bird do 24.07 · od 25.07: 800 zł</p>
+        <p class="eb-counter is-hidden" id="eb-counter"></p>
+      </div>
+      <p>Startujemy 18 sierpnia, wtorki 19:00. Cena 650 zł do 24 lipca, potem 800 zł. Miejsc jest tyle, żeby nikt nie zginął w tłumie — jak znikną, zapisy się zamykają. Jeśli doczytałaś dotąd i coś w Tobie mówi „to o mnie” — to jest ten moment.</p>
+    </div>
+
+    <div class="final-cta">
+      <a class="btn btn--block" id="final-btn" href="https://cart.easy.tools/checkout/45331335/spokoj-z-jedzeniem-edycja-online-start-1808">Kup teraz</a>
+      <p class="seats-note">Mała, bliska grupa — miejsca celowo ograniczone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="brand">Twoja dietetyczka Dietanka</p>
+    <p>
+      <a href="mailto:ankasad@gmail.com">ankasad@gmail.com</a><br>
+      <a href="https://app.easy.tools/policies/45331335">Polityka prywatności</a> · <a href="https://app.easy.tools/terms/45331335">Regulamin</a>
+    </p>
+  </div>
+</footer>
+
+<!-- STICKY CTA (mobile) -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a class="btn btn--block" id="sticky-btn" href="https://cart.easy.tools/checkout/45331335/spokoj-z-jedzeniem-edycja-online-start-1808">Zapisuję się — 650 zł</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     KONFIGURACJA — podmień tutaj przed publikacją
+     ============================================================ */
+  var SEATS        = "";                 // nieużywane — liczba miejsc zdjęta ze strony (limit pilnuje EasyCart)
+  var LINK_EASYCART = "https://cart.easy.tools/checkout/45331335/spokoj-z-jedzeniem-edycja-online-start-1808"; // link do koszyka (faza sprzedaży)
+  var LINK_LISTA   = "https://spokoj.subscribepage.io";     // lista zainteresowanych 2. edycją (po zamknięciu)
+
+  /* Granice faz w czasie Europe/Warsaw (lato = CEST, UTC+2) */
+  var LIST_END     = Date.UTC(2026, 6, 15, 21, 59, 59); // 15.07.2026 23:59:59 CEST — cena 550 zł dla listy
+  var EB_END       = Date.UTC(2026, 6, 24, 21, 59, 59); // 24.07.2026 23:59:59 CEST
+  var CLOSED_START = Date.UTC(2026, 7, 17, 22, 0, 0);   // 18.08.2026 00:00 CEST
+  var DAY_MS = 86400000;
+
+  var now = Date.now();
+
+  /* wstaw liczbę miejsc */
+  var miejscaEl = document.getElementById("miejsca");
+  if (miejscaEl) miejscaEl.textContent = SEATS;
+
+  function setHref(id, url){ var el = document.getElementById(id); if(el) el.href = url; }
+  function show(el){ if(el) el.classList.remove("is-hidden"); }
+  function hide(el){ if(el) el.classList.add("is-hidden"); }
+
+  var heroBtn      = document.getElementById("hero-btn");
+  var heroPriceHint= document.getElementById("hero-price-hint");
+  var stickyBtn    = document.getElementById("sticky-btn");
+  var finalBtn     = document.getElementById("final-btn");
+  var saleBlock    = document.getElementById("sale-block");
+  var closedMsg    = document.getElementById("closed-msg");
+  var priceOld     = document.getElementById("price-old");
+  var priceNow     = document.getElementById("price-now");
+  var priceNote    = document.getElementById("price-note");
+  var ebCounter    = document.getElementById("eb-counter");
+  var finalCta     = document.querySelector(".final-cta");
+  var midBtn       = document.getElementById("mid-btn");
+
+  if (now <= LIST_END) {
+    /* ---------- FAZA: CENA DLA LISTY (550 zł do 15.07 23:59) ---------- */
+    hide(priceOld);
+    priceNow.textContent  = "550 zł";
+    priceNote.textContent = "cena dla zapisanych na listę · do 15.07 · od 16.07: 650 zł · od 25.07: 800 zł";
+    hide(ebCounter);
+
+    if (heroBtn){
+      heroBtn.innerHTML = 'Zapisuję się — <span class="hero-btn-price">550 zł</span> do 15.07';
+      heroBtn.href = LINK_EASYCART;
+    }
+    if (heroPriceHint) heroPriceHint.textContent = "Cena dla zapisanych na listę — do 15.07. Od 16.07: 650 zł, od 25.07: 800 zł.";
+    if (stickyBtn){ stickyBtn.textContent = "Zapisuję się — 550 zł"; stickyBtn.href = LINK_EASYCART; }
+    if (finalBtn){ finalBtn.textContent = "Kup teraz"; finalBtn.href = LINK_EASYCART; }
+
+  } else if (now <= EB_END) {
+    /* ---------- FAZA: EARLY BIRD (650 zł do 24.07) ----------
+       Bez przekreślania 800 zł: to cena przyszła, nie obniżka —
+       przekreślenie ceny nigdy niestosowanej może wprowadzać w błąd. */
+    hide(priceOld);
+    priceNow.textContent  = "650 zł";
+    priceNote.textContent = "cena early bird do 24.07 · od 25.07: 800 zł";
+
+    var daysLeft = Math.ceil((EB_END - now) / DAY_MS);
+    if (daysLeft < 1) daysLeft = 1;
+    var word = (daysLeft === 1) ? "dzień" : "dni";
+    ebCounter.textContent = "Early bird kończy się za " + daysLeft + " " + word + ".";
+    show(ebCounter);
+
+    if (heroBtn){
+      heroBtn.innerHTML = 'Zapisuję się — <span class="hero-btn-price">650 zł</span> do 24.07';
+      heroBtn.href = LINK_EASYCART;
+    }
+    if (heroPriceHint) heroPriceHint.textContent = "Cena early bird — do 24 lipca. Od 25 lipca: 800 zł.";
+    if (stickyBtn){ stickyBtn.textContent = "Zapisuję się — 650 zł"; stickyBtn.href = LINK_EASYCART; }
+    if (finalBtn){ finalBtn.textContent = "Kup teraz"; finalBtn.href = LINK_EASYCART; }
+
+  } else if (now < CLOSED_START) {
+    /* ---------- FAZA: CENA REGULARNA (800 zł) ---------- */
+    hide(priceOld);
+    priceNow.textContent  = "800 zł";
+    priceNote.textContent = "";
+    hide(priceNote);
+    hide(ebCounter);
+
+    if (heroBtn){
+      heroBtn.innerHTML = 'Zapisuję się — <span class="hero-btn-price">800 zł</span>';
+      heroBtn.href = LINK_EASYCART;
+    }
+    if (heroPriceHint) heroPriceHint.textContent = "";
+    if (stickyBtn){ stickyBtn.textContent = "Zapisuję się — 800 zł"; stickyBtn.href = LINK_EASYCART; }
+    if (finalBtn){ finalBtn.textContent = "Kup teraz"; finalBtn.href = LINK_EASYCART; }
+
+  } else {
+    /* ---------- FAZA: ZAPISY ZAMKNIĘTE (od 18.08) ---------- */
+    hide(saleBlock);
+    show(closedMsg);
+
+    if (heroBtn){
+      heroBtn.textContent = "Zapisz się na listę 2. edycji";
+      heroBtn.href = LINK_LISTA;
+    }
+    if (heroPriceHint) heroPriceHint.textContent = "Zapisy do 1. edycji są zamknięte — pierwsza sesja już trwa.";
+    if (stickyBtn){ stickyBtn.textContent = "Lista 2. edycji"; stickyBtn.href = LINK_LISTA; }
+    if (midBtn){ midBtn.textContent = "Zapisz się na listę 2. edycji"; midBtn.href = LINK_LISTA; }
+    if (finalBtn){ finalBtn.textContent = "Zapisz się na listę 2. edycji"; finalBtn.href = LINK_LISTA; }
+    var seatsNote = finalCta ? finalCta.querySelector(".seats-note") : null;
+    if (seatsNote) seatsNote.textContent = "Dołącz do listy — dostaniesz info o kolejnej edycji jako pierwsza.";
+  }
+
+  /* ---------- Sticky CTA na mobile: pokaż po przescrollowaniu hero ---------- */
+  var sticky = document.getElementById("sticky-cta");
+  var hero   = document.getElementById("top");
+  if (sticky && hero && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          sticky.classList.remove("visible");
+          sticky.setAttribute("aria-hidden","true");
+        } else {
+          sticky.classList.add("visible");
+          sticky.setAttribute("aria-hidden","false");
+        }
+      });
+    }, { rootMargin: "0px 0px -85% 0px" });
+    io.observe(hero);
+  }
+
+})();
+</script>
+
+</body>
+</html>
