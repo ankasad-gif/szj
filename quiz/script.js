@@ -5,7 +5,7 @@
 /* ---------- KONFIGURACJA — jedyne miejsce do edycji ---------- */
 const CONFIG = {
   // URL web appa Apps Script (Deploy → Web app). Instrukcja: README, krok 2.
-  ENDPOINT_URL: "WKLEJ_URL_WEB_APPA",
+  ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbz_ZnDfDcLQBXAEcNLAMnTI72TG4s5XnIZndKFRnKjuqM55gUvf-NjhgPJlBjsOKdVrcw/exec",
   // Strona sprzedażowa programu Spokój z Jedzeniem:
   LINK_PROGRAM: "https://ankasad-gif.github.io/szj/",
   // Polityka prywatności (tymczasowa z repo; po publikacji Easy Legal podmień):
